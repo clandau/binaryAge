@@ -5,6 +5,7 @@ function ageInBinary(age) {
     else if(age > 140 || age < 0) return('invalid age');
     else if(!Number.isInteger(age)) return('please enter a whole number');
     let binaryAge = [];
+    if(age === 0) return '0';
     while(age > 0) {
         var remain = age % 2;
         age = parseInt(age/2);

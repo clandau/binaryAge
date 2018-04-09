@@ -1,10 +1,10 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     color: black;
     background-color: #f4f4eb;
     line-height: 1.4em;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .container {
@@ -14,6 +14,10 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 10px auto;
+}
+
+#smallerText {
+    font-size: 15px;
 }
 
 input {
@@ -30,6 +34,10 @@ input {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+#results-container {
+    padding: 5%;
 }
 
 .footer {
