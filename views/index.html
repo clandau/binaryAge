@@ -37,16 +37,13 @@
     let resultsPlacement = document.getElementById("results");
 
     function results() {
-        let resultIn10 = parseInt(Math.round(parseFloat(ageBox.value)));
-        let resultIn2 = ageInBinary(resultIn10);
-        console.log(resultIn10);
-        resultsPlacement.innerHTML = "Your age in binary is " + resultIn2;
-    }
+        let resultBase10 = parseInt(Math.round(parseFloat(ageBox.value)));
+        let resultBase2 = ageInBinary(resultBase10);
+        resultsPlacement.innerHTML = "Your age in binary is " + resultBase2;
+    };
 
     function ageInBinary(age) {
-        if(isNaN(age)) {
-            return('incalculable.');
-        }
+        if(isNaN(age)) return('incalculable.');
         else if(age > 200 || age < 0) return('not really an age!');
         if(age === 0) return '0';
         let binaryAge = [];

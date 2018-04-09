@@ -38,6 +38,7 @@ input {
 
 #results-container {
     padding: 5%;
+    line-height: 50px;
 }
 
 .footer {
