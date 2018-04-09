@@ -11,15 +11,15 @@
 <body>
     <div class= 'container'>
         <h2>Convert your age into binary!</h2>
-        <p>Enter your age:</p>
+        <p>Enter your age and click submit to convert it to binary.</p>
         <div id="">
             <input id="age" type="text" size = "20" placeholder="Enter age" />
             <input type="submit" 
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
        tabindex="-1" />
-       <button type="submit" form="nameform" value="To Binary">To binary</button>
+       <button type="submit" class="button" form="nameform" value="To Binary" onclick="results()">Submit</button>
     </div>
-        <p></p>
+        <h1 id="results"></h1>
     </div>
 
     <div class="footer">
@@ -28,4 +28,33 @@
             </p>
     </div>
 </body>
+
+<script>
+    let ageBox = document.getElementById("age");
+    let resultsPlacement = document.getElementById("results");
+
+    function results() {
+        let resultIn10 = parseInt(ageBox.value);
+        let resultIn2 = ageInBinary(resultIn10);
+        console.log(resultIn10);
+        resultsPlacement.innerHTML = "Your age in binary is " + resultIn2;
+    }
+
+    function ageInBinary(age) {
+    if(isNaN(age)) {
+        return('incalculable.');
+    }
+    else if(age > 200 || age < 0) return('not really an age!');
+    else if(!Number.isInteger(age)) {
+        age = Math.round(age);
+    };
+    let binaryAge = [];
+    while(age > 0) {
+        var remain = age % 2;
+        age = parseInt(age/2);
+        binaryAge.unshift(remain.toString());
+    }
+    return binaryAge.join('');
+}
+</script>
 </html>
